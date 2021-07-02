@@ -1,0 +1,34 @@
+{% extends 'user_index.html' %}
+{% block body %}
+<body>
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Bus</th>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>price</th>
+        <th>date</th>
+        <th>Time</th>
+    </tr>
+    {%  for i in list %}
+    <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.bus_name }}</td>
+        <td>{{ i.source }}</td>
+        <td>{{ i.dest }}</td>
+        <td>{{ i.price }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.time }}</td>
+    </tr>
+    {%  endfor %}
+</table>
+<form method="post"action="/bookingapp/bookings/">
+{% csrf_token %}
+    <table class="table table-striped">
+    {{ form3.as_table }}
+        </table>
+    <input type="submit"value="Book"class="btn btn-success">
+</form>
+</body>
+{% endblock %}

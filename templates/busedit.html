@@ -1,0 +1,12 @@
+{%  extends 'admin_index.html' %}
+{% block body %}
+<body>
+<form method="post"action="">
+    {% csrf_token %}
+    <table class="table table-striped">
+    {{ form.as_table }}
+        </table>
+    <input type="submit"value="Update"class="btn btn-success">
+</form>
+</body>
+{% endblock %}

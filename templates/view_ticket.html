@@ -1,0 +1,50 @@
+{% extends 'user_index.html' %}
+{% block body %}
+<body>
+<form>
+<table class="table table-striped">
+    <tr>
+        <th>BOOKING ID</th>
+    <td>{{ ticket.id }}</td>
+        </tr>
+    <tr>
+        <th>Name</th>
+        <td>{{ ticket.name }}</td>
+    </tr>
+    <tr>
+        <th>Bus name</th>
+        <td>{{ ticket.bus_name }}</td>
+        </tr>
+    <tr>
+        <th>Source</th>
+        <td>{{ ticket.source }}</td>
+        </tr>
+    <tr>
+        <th>Destination</th>
+        <td>{{ ticket.dest }}</td>
+        </tr>
+    <tr>
+        <th>Number of seat</th>
+        <td>{{ ticket.nos }}</td>
+        </tr>
+    <tr>
+        <th>Price</th>
+        <td>{{ ticket.price }}</td>
+        </tr>
+    <tr>
+        <th>Date</th>
+        <td>{{ ticket.date }}</td>
+        </tr>
+    <tr>
+        <th>time</th>
+        <td>{{ ticket.time }}</td>
+        </tr>
+    <tr>
+        <th>Status</th>
+        <td>{{ ticket.status }}</td>
+    </tr>
+    </table><br>
+    <input type="button" value="Print Ticket" onClick="window.print()">
+    </form>
+</body>
+{% endblock %}

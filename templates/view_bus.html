@@ -1,0 +1,33 @@
+{% extends 'admin_index.html' %}
+{% block body %}
+<body>
+<table class="table table-striped">
+    <tr>
+<th>Name</th>
+        <th>Destination</th>
+        <th>Source</th>
+    <th>Total seat</th>
+        <th>Avialable seat</th>
+        <th>Price</th>
+        <th>Date</th>
+        <th>Time</th>
+    </tr>
+    {% for i in list %}
+
+    <tr>
+        <td>{{ i.bus_name }}</td>
+        <td>{{ i.dest }}</td>
+        <td>{{ i.source }}</td>
+        <td>{{ i.nos }}</td>
+        <td>{{ i.rem }}</td>
+        <td>{{ i.price }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.time }}</td>
+        <td><A href="/bookingapp/updatebus/{{ i.id }}">Update</A> </td>
+        <td><A href="/bookingapp/deletebus/{{ i.id }}">Delete</A> </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+{% endblock %}

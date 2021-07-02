@@ -1,0 +1,40 @@
+{% extends 'user_index.html' %}
+{% block body %}
+<body>
+<form>
+<table class="table table-striped">
+    <tr>
+        <th>BOOKING ID</th>
+        <th>USER NAME</th>
+        <th>BUS NAME</th>
+        <th>SOURCE</th>
+        <th>DESTINATION</th>
+        <th>NUMBER OF SEAT</th>
+        <th>PRICE</th>
+        <th>DATE</th>
+        <th>TIME</th>
+        <th>STATUS</th>
+    </tr>
+    {% for i in booklist %}
+    <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.bus_name }}</td>
+        <td>{{ i.source }}</td>
+        <td>{{ i.dest }}</td>
+        <td>{{ i.nos }}</td>
+        <td>{{ i.price }}</td>
+        <td>{{ i.date }}</td>
+        <td>{{ i.time }}</td>
+        <td>{{ i.status }}</td>
+        <td><a href="/bookingapp/viewticket/{{ i.id }}">View Ticket</a> </td>
+        <td><a href="/bookingapp/cancellation/{{ i.id }}">Cancel the Ticket</a></td>
+
+    </tr>
+    {% endfor %}
+
+</table><br><br><br><br>
+    <input type="button" value="Print Ticket" onClick="window.print()">
+</form>
+</body>
+{% endblock %}
